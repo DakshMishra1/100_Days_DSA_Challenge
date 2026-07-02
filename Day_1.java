@@ -25,7 +25,7 @@
 
 import java.util.*;
 
-public class Array{
+public class Day_1{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
