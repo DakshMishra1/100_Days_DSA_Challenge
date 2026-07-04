@@ -21,7 +21,7 @@
 
 // Explanation: Compared with 10, 20, 30 (found at index 2 with 3 comparisons)
 
-//Solution
+//Solution 
 
 import java.util.*;
 
