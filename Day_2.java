@@ -32,7 +32,7 @@ public class Day_2 {
         int n = sc.nextInt();
 
         System.out.print("Enter the array Elemets : ");
-        int[] arr = new int[n+1];
+        int[] arr = new int[n];
 
         for(int i = 0; i <n ; i++){
             arr[i] = sc.nextInt() ;

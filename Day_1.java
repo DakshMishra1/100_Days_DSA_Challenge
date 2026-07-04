@@ -33,7 +33,7 @@ public class Day_1{
         int n = sc.nextInt();
 
         System.out.println("Enter Array value: ");
-        int[] arr = new int[n+1];
+        int[] arr = new int[n];
 
         for (int i = 0; i < n; i++){
             arr[i] = sc.nextInt();
