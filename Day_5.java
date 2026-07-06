@@ -45,26 +45,28 @@ public class Day_5{
             arr2[i] = sc.nextInt();
         }
 
-        int i = 0, j = 0;
+        int[] merged = new int[p + q];
+
+        int i = 0, j = 0, k = 0;
 
         while (i < p && j < q) {
             if (arr1[i] <= arr2[j]) {
-                System.out.print(arr1[i] + " ");
-                i++;
+                merged[k++] = arr1[i++];
             } else {
-                System.out.print(arr2[j] + " ");
-                j++;
+                merged[k++] = arr2[j++];
             }
         }
 
         while (i < p) {
-            System.out.print(arr1[i] + " ");
-            i++;
+            merged[k++] = arr1[i++];
         }
 
         while (j < q) {
-            System.out.print(arr2[j] + " ");
-            j++;
+            merged[k++] = arr2[j++];
+        }
+
+        for (int x = 0; x < merged.length; x++) {
+            System.out.print(merged[x] + " ");
         }
 
         sc.close();
