@@ -21,3 +21,52 @@
 // 10 15 20 25 30 40 50 60 70
 
 // Explanation: Compare the next unprocessed arrival time from both logs and append the earlier one to the final log until all entries are processed
+
+//Solution
+
+import java.util.Scanner;
+
+public class Day_5{
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int p = sc.nextInt();
+        int[] arr1 = new int[p];
+
+        for (int i = 0; i < p; i++) {
+            arr1[i] = sc.nextInt();
+        }
+
+        int q = sc.nextInt();
+        int[] arr2 = new int[q];
+
+        for (int i = 0; i < q; i++) {
+            arr2[i] = sc.nextInt();
+        }
+
+        int i = 0, j = 0;
+
+        while (i < p && j < q) {
+            if (arr1[i] <= arr2[j]) {
+                System.out.print(arr1[i] + " ");
+                i++;
+            } else {
+                System.out.print(arr2[j] + " ");
+                j++;
+            }
+        }
+
+        while (i < p) {
+            System.out.print(arr1[i] + " ");
+            i++;
+        }
+
+        while (j < q) {
+            System.out.print(arr2[j] + " ");
+            j++;
+        }
+
+        sc.close();
+    }
+}
