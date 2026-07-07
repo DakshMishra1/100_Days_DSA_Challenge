@@ -17,3 +17,30 @@
 
 // Solution
 
+class Solution{
+    public class fib(int n){
+        if(n = 0){
+            return 0;
+        }
+        if(n = 1){
+            return 1;
+        }
+
+        return fib(n-1) + fib(n-2);
+    }
+}
+
+public class Day_7 {
+    public static void main(Strings[] args){
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        Solution fib1 = new soultion();
+        fib1.fib(n);
+        
+        sc.close();
+
+    }
+    
+}
