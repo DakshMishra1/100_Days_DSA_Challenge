@@ -22,15 +22,25 @@ public class Day_9{
 
         Scanner sc = new Scanner(System.in);
 
-        char[] arr = new char[5];
+        String str = sc.next();
 
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = sc.next().charAt(0);
+        char[] arr = str.toCharArray();
+
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left < right) {
+
+            char temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+
+            left++;
+            right--;
         }
 
-        System.out.println(Arrays.toString(arr));
+        System.out.println(arr);
 
         sc.close();
-
     }
 }
