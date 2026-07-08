@@ -16,3 +16,21 @@
 // Explanation: The first character moves to the last position, the second to the second-last, and so on until the entire string is mirrored
 
 // Solution
+import java.util.*;
+public class Day_9{
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+
+        char[] arr = new char[5];
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.next().charAt(0);
+        }
+
+        System.out.println(Arrays.toString(arr));
+
+        sc.close();
+
+    }
+}
