@@ -16,3 +16,37 @@
 // Explanation: String reads same forwards and backwards
 
 // Solution 
+
+import java.util.*;
+
+public class Day_10{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.next();
+
+        int left = 0;
+        int right = str.length() - 1;
+
+        boolean valid = true;
+
+        while(left < right){
+            if(str.charAt(left) != str.charAt(right)){
+
+                valid = false;
+                break;
+            }
+            left++;
+            right--;
+
+        }
+
+        if(valid){
+            System.out.println("Yes");
+        }else{
+            System.err.println("No");
+        }
+
+        sc.close();
+    }
+}
