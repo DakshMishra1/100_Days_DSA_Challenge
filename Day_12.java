@@ -1,4 +1,5 @@
-// Problem: Write a program to check whether a given matrix is symmetric. A matrix is said to be symmetric if it is a square matrix and is equal to its transpose (i.e., element at position [i][j] is equal to element at position [j][i] for all valid i and j).
+// Problem: Write a program to check whether a given matrix is symmetric. A matrix is said to be symmetric if it is a square matrix and is equal to its transpose (i.e., 
+// element at position [i][j] is equal to element at position [j][i] for all valid i and j).
 
 // Input:
 // - First line: two integers m and n representing the number of rows and columns
@@ -50,6 +51,31 @@
 
 //Solution
 
+import java.util.*;
 public class Day_12 {
-    
+    public static void main(String[] args){
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input : ");
+        
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+
+        int[][] arr = new int[m][n];
+
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                if(arr[i][j] != arr[j][i]){
+                    System.out.println("Not a Symmetric Matrix ");
+                    return;
+                }
+            }
+        }
+        System.out.println("Symmetric Matrix");
+    }
 }
