@@ -1,4 +1,5 @@
-// Problem: You are given a rectangular matrix of integers. Starting from the outer boundary, traverse the matrix in a clockwise manner and continue moving inward layer by layer until all elements are visited.
+// Problem: You are given a rectangular matrix of integers. Starting from the outer boundary, traverse the matrix in a clockwise manner and continue moving inward layer by layer 
+// until all elements are visited.
 
 // Input:
 // - First line: two integers r and c representing the number of rows and columns
@@ -18,7 +19,8 @@
 // 1 2 3 6 9 8 7 4 5
 
 // Explanation:
-// The traversal begins along the top row, proceeds down the rightmost column, then moves across the bottom row in reverse, and finally goes up the leftmost column. The same pattern repeats for the inner submatrix.
+// The traversal begins along the top row, proceeds down the rightmost column, then moves across the bottom row in reverse, and finally goes up the leftmost column. The same pattern 
+// repeats for the inner submatrix.
 
 // Test Cases:
 
@@ -47,6 +49,29 @@ public class Day_13 {
         
         Scanner sc = new Scanner(System.in);
         
+        int r = sc.nextInt();
+        int c = sc.nextInt();
+        int[][] arr = new int[r][c];
+        List<Integer> list = new ArrayList<>();
+
+        for(int i = 0; i < r; i++){
+            for(int j = 0; j < c; j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        
+        for(int i = 0; i < r; i++){
+            for(int j = 0; j < c; j++){
+                if(!list.contains(arr[i][j])){
+                    list.add(arr[i][j]);
+                }
+                if(list.contains(arr[i][j])){
+                    continue;
+                }
+            }
+        }
+
+        System.out.println(list);
         
         sc.close();
     }
