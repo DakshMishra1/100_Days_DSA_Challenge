@@ -52,33 +52,28 @@ public class Day_14{
 
         Scanner sc = new Scanner(System.in);
 
-        int m = sc.nextInt();
         int n = sc.nextInt();
 
-        int[][] arr = new int[m][n];
+        int[][] arr = new int[n][n];
 
-        for(int i = 0; i < m; i++){
+        for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){
                 arr[i][j] = sc.nextInt();
             }
         }
-
-        if( m != n){
-            System.out.println("Not an Identity Matrix");
-        }
         
-        for(int i = 0; i < m; i++){
+        for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){
 
-                if(i == j){
-                    if(arr[i][j] != 1){
-                        System.out.println("Not an Identity Matrix");
-                        break;
-                    }
-                }else{
-                    if(arr[i][j] != 0){
-                        System.out.println("Not an Identity Matrix");
-                        break;
+                if(i == j && arr[i][j] != 1){
+                    System.out.println("Not an Identity Matrix");
+                    return;
+                
+                }
+                if( i != j && arr[i][j] != 0){
+                        if(arr[i][j] != 0){
+                            System.out.println("Not an Identity Matrix");
+                            return;
                     }
                 }
             }
