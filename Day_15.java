@@ -25,3 +25,30 @@
 public class Day_15 {
     
 }
+
+/*
+srow = 0
+erow = n-1
+scol = 0
+ecol = n-1
+
+for( i = srow to erow){
+    for( j = scol to ecol){
+        temp = arr[i][j];
+
+        arr[i][j] = arr[i][ecol];
+        arr[i][ecol] = arr[erow][ecol];
+        arr[erow][ecol] = arr[erow][scol];
+        arr[erow][scol] = arr[srow][scol];
+
+        scol++;
+        ecol++;
+        srow++;
+        erow++;
+
+    }
+}
+return arr;
+
+
+*/
