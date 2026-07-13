@@ -23,28 +23,25 @@
 
 
 /*
-bool diagonal = false;
-bool non_dia = false;
-
-for(i = 0; i < m; i++){
-    for(j= 0; j <n; j++){
-        if (m == n){
-            if(arr[m][n] == 1){
-                diagonal = true;
-                return diagonal;
-            }
-        }
-        if(m != n){
-            if(arr[m][n] == 0){
-                non_dia = true;
-                return non_dia;
-            }
-        }
-    }    
+if (m != n){
+    print("Not identity");
 }
 
-if(diagonal && non_diagonal == true){
-    sys.out.print("Identity matrix");
+for(i = 0 to m-1){
+    for(i = 0 to n -1){
+        if(i == j){
+            if(arr[i][j] != 1){
+                print(not identity);
+                break;
+            }
+        else{
+                if(arr[i][j] != 0){
+                    print(not identity);
+                    break;
+                }
+            }
+        }
+    }
 }
-
+print(Identity);
 */
