@@ -44,35 +44,58 @@
 //Solution
 
 import java.util.*;
+
 public class Day_13 {
     public static void main(String[] args) {
-        
+
         Scanner sc = new Scanner(System.in);
-        
+
         int r = sc.nextInt();
         int c = sc.nextInt();
-        int[][] arr = new int[r][c];
-        List<Integer> list = new ArrayList<>();
 
-        for(int i = 0; i < r; i++){
-            for(int j = 0; j < c; j++){
+        int[][] arr = new int[r][c];
+
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
                 arr[i][j] = sc.nextInt();
             }
         }
-        
-        for(int i = 0; i < r; i++){
-            for(int j = 0; j < c; j++){
-                if(!list.contains(arr[i][j])){
-                    list.add(arr[i][j]);
-                }
-                if(list.contains(arr[i][j])){
-                    continue;
+
+        int srow = 0, scol = 0;
+        int erow = r - 1, ecol = c - 1;
+
+        while (srow <= erow && scol <= ecol) {
+
+            // Top row
+            for (int j = scol; j <= ecol; j++) {
+                System.out.print(arr[srow][j] + " ");
+            }
+
+            // Right column
+            for (int i = srow + 1; i <= erow; i++) {
+                System.out.print(arr[i][ecol] + " ");
+            }
+
+            // Bottom row
+            if (srow < erow) {
+                for (int j = ecol - 1; j >= scol; j--) {
+                    System.out.print(arr[erow][j] + " ");
                 }
             }
+
+            // Left column
+            if (scol < ecol) {
+                for (int i = erow - 1; i > srow; i--) {
+                    System.out.print(arr[i][scol] + " ");
+                }
+            }
+
+            srow++;
+            erow--;
+            scol++;
+            ecol--;
         }
 
-        System.out.println(list);
-        
         sc.close();
     }
 }
