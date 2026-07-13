@@ -22,26 +22,19 @@
 // solution
 
 /*
-if (m != n){
-    print("Not identity");
-}
-
-for(i = 0 to m-1){
+for(i = 0 to n-1){
     for(i = 0 to n -1){
-        if(i == j){
-            if(arr[i][j] != 1){
-                print(not identity);
-                break;
-            }
-        else{
-                if(arr[i][j] != 0){
-                    print(not identity);
-                    break;
-                }
-            }
+        if(i == j && arr[i][j] != 1){
+            print(not identity);
+            return;;
+        }
+        if( i != j && arr[i][j] != 0){
+            print(not identity);
+            break;
         }
     }
 }
+
 print(Identity);
 
 */
