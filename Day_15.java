@@ -22,33 +22,33 @@
 
 // Solution
 
+import java.util.*;
 public class Day_15 {
-    
-}
+    public static void main(String[] args) {
 
-/*
-srow = 0
-erow = n-1
-scol = 0
-ecol = n-1
+        Scanner sc = new Scanner(System.in);
 
-for( i = srow to erow){
-    for( j = scol to ecol){
-        temp = arr[i][j];
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        int sum = 0;
+        int[][] arr = new int[m][n];
 
-        arr[i][j] = arr[i][ecol];
-        arr[i][ecol] = arr[erow][ecol];
-        arr[erow][ecol] = arr[erow][scol];
-        arr[erow][scol] = arr[srow][scol];
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
 
-        scol++;
-        ecol++;
-        srow++;
-        erow++;
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                if( i == j){
+                    sum += arr[i][j];
+                }
+            }
+        }
 
+        System.out.println(sum);
+
+        sc.close();
     }
 }
-return arr;
-
-
-*/

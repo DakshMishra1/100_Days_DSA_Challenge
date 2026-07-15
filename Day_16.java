@@ -17,6 +17,14 @@
 
 // Solution
 
-public @interface Day_16 {
-    
+import java.util.*;
+public class Day_16 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        
+
+        sc.close();
+    }
 }
