@@ -29,26 +29,24 @@ public class Day_16 {
         for(int i = 0; i < n; i++){
             int num = sc.nextInt();
 
-            if (map.containsKey(num)) {
+            // if (map.containsKey(num)) {
             
-                map.put(num, map.get(num) + 1);
+            //     map.put(num, map.get(num) + 1);
             
-            } else {
-                map.put(num, 1);
-            }
+            // } else {
+            //     map.put(num, 1);
+            // }
 
-        //     map.put(num, map.getOrDefault(num, 0) + 1);
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
 
-        for (int key : map.keySet()) {
-            System.out.println(key + ":" + map.get(key));   
-        }
-        
-        // for(Map.Entry<Integer, Integer> entry : map.entrySet()){
-        //     System.out.println(entry.getKey() + ":" + entry.getValue());
+        // for (int key : map.keySet()) {
+        //     System.out.println(key + ":" + map.get(key));   
         // }
-
         
+        for(Map.Entry<Integer, Integer> entry : map.entrySet()){
+            System.out.println(entry.getKey() + ":" + entry.getValue());
+        }
 
         sc.close();
     }
