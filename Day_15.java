@@ -31,18 +31,13 @@ public class Day_15 {
         int m = sc.nextInt();
         int n = sc.nextInt();
         int sum = 0;
-        int[][] arr = new int[m][n];
 
         for(int i = 0; i < m; i++){
             for(int j = 0; j < n; j++){
-                arr[i][j] = sc.nextInt();
-            }
-        }
+                int arr = sc.nextInt();
 
-        for(int i = 0; i < m; i++){
-            for(int j = 0; j < n; j++){
                 if( i == j){
-                    sum += arr[i][j];
+                    sum += arr;
                 }
             }
         }
