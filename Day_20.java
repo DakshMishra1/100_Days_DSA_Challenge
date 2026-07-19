@@ -25,10 +25,23 @@ public class Day_20 {
     public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
+        int n = 0;
+        if (sc.hasNextInt()) n = sc.nextInt();
+        long count = 0;
+        long prefix = 0;
+        Map<Long, Integer> freq = new HashMap<>();
 
-        
+        freq.put(0L, 1);
+        for (int i = 0; i < n; i++){
+            long x = 0;
+            if (sc.hasNextLong()) x = sc.nextLong();
+            prefix += x;
 
-
+            int f = freq.getOrDefault(prefix, 0);
+            count += f;
+            freq.put(prefix, f + 1);
+        }
+        System.out.println(count);
 
 
         sc.close();
