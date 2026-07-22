@@ -22,6 +22,22 @@
 // Explanation:
 // Compare nodes of both lists, append smaller to result, continue until all nodes are merged.
 
+// Solution 
+
+import java.util.*;
 public class Day_23 {
-    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+
+
+
+
+
+
+
+        sc.close();
+    }
 }
