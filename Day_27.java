@@ -24,6 +24,26 @@
 
 // Solution
 
+import java.util.*;
+
+class Node{
+    int data;
+    Node next;
+
+    public Node(int value){
+        this.data = value;
+        this.next = null;
+    }
+}
 public class Day_27 {
-    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        
+
+
+
+
+        sc.close();
+    }
 }
