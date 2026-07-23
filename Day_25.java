@@ -22,6 +22,60 @@
 
 //Solution 
 
+import java.util.*;
+
+class Node{
+    int data;
+    Node next;
+
+    public Node(int value){
+        this.data = value;
+        this.next = null;
+    }
+}
 public class Day_25 {
+
+    public static int Count(Node head, int m){
+        int count = 0;
+        Node temp = head;
+
+        while(temp != null){
+            if(temp.data == m){
+                count++;
+            }
+
+            temp = temp.next;
+        }
+
+        return count;
+
+    }
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        Node head = null;
+        Node tail = null;
+
+        for(int i = 0; i < n; i++){
+            int value = sc.nextInt();
+            Node newNode = new Node(value);
+
+            if(head == null){
+                head = newNode;
+                tail = newNode;
+            }else{
+                tail.next = newNode;
+                tail = newNode;
+            }
+        }
+
+        int m = sc.nextInt();
+
+        System.out.println(Count(head, m));
+
+        sc.close();
+    }
     
 }
