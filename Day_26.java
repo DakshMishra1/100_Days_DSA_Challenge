@@ -25,10 +25,12 @@ import java.util.*;
 class Node{
     int data;
     Node next;
+    Node prev;
 
     public Node(int value){
         this.data = value;
         this.next = null;
+        this.prev = null;
     }
 }
 
@@ -50,6 +52,7 @@ public class Day_26 {
                 tail = newNode;
             }else{
                 tail.next = newNode;
+                newNode.prev = tail;
                 tail = newNode;
             }
         }
