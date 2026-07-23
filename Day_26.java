@@ -16,18 +16,18 @@
 // 10 20 30 40 50
 
 // Explanation:
-// Each node has data, next, prev. Insert nodes sequentially, traverse from head using next pointer.
+// Each DNode has data, next, prev. Insert DNodes sequentially, traverse from head using next pointer.
 
 //Solution
 
 import java.util.*;
 
-class Node{
+class DNode {
     int data;
-    Node next;
-    Node prev;
+    DNode next;
+    DNode prev;
 
-    public Node(int value){
+    public DNode(int value) {
         this.data = value;
         this.next = null;
         this.prev = null;
@@ -36,32 +36,39 @@ class Node{
 
 public class Day_26 {
 
+    // Method to print the doubly linked list
+    public static void display(DNode head) {
+        DNode temp = head;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        Node head = null;
-        Node tail = null;
+        DNode head = null;
+        DNode tail = null;
 
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             int value = sc.nextInt();
-            Node newNode = new Node(value);
+            DNode newDNode = new DNode(value);
 
-            if(head == null){
-                head = newNode;
-                tail = newNode;
-            }else{
-                tail.next = newNode;
-                newNode.prev = tail;
-                tail = newNode;
+            if (head == null) {
+                head = newDNode;
+                tail = newDNode;
+            } else {
+                tail.next = newDNode;
+                newDNode.prev = tail;
+                tail = newDNode;
             }
         }
 
-
-
-
-
+        display(head);
 
         sc.close();
-    }   
+    }
 }

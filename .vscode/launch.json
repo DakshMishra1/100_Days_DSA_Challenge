@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Day_26",
+            "request": "launch",
+            "mainClass": "Day_26",
+            "projectName": "DSA_ce2d58d3"
+        },
+        {
+            "type": "java",
             "name": "Day_24",
             "request": "launch",
             "mainClass": "Day_24",
