@@ -30,12 +30,39 @@ class Node{
     int data;
     Node next;
 
-    public Node(int value){
+    Node(int value){
         this.data = value;
         this.next = null;
     }
 }
 public class Day_27 {
+    
+    static Node findIntersect(Node head, Node head2 , int m, int n){
+
+        int diff = Math.abs(n - m);
+
+        if( n > m){
+            while(diff-- > 0){
+                head = head.next;
+            }
+        }else{
+            while(diff-- >0){
+                head2 = head2.next;
+            }
+        }
+
+        while(head != null && head2 != null){
+            if(head.data == head2.data){
+                return head;
+            }
+
+            head = head.next;
+            head2 = head2.next;
+        }
+
+        return null;
+    }
+
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
@@ -73,8 +100,13 @@ public class Day_27 {
             }
         }
 
+        Node ans = findIntersect(head, head2, m, n);
 
-
+        if(ans != null){
+            System.out.println(ans.data);
+        }else{
+            System.out.println("No intersection");
+        }
 
         sc.close();
     }
