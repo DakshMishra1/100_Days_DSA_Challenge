@@ -24,18 +24,17 @@
 
 import java.util.Scanner;
 
-class Node {
+class Node{
     int data;
     Node next;
 
-    Node(int value) {
+    Node(int value){
         this.data = value;
         this.next = null;
     }
 }
-
 public class Day_29 {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
@@ -43,15 +42,14 @@ public class Day_29 {
         Node head = null;
         Node tail = null;
 
-        // Create Linked List
-        for (int i = 0; i < n; i++) {
+        for(int i = 0; i < n; i++){
             int value = sc.nextInt();
             Node newNode = new Node(value);
 
-            if (head == null) {
+            if(head == null){
                 head = newNode;
                 tail = newNode;
-            } else {
+            }else{
                 tail.next = newNode;
                 tail = newNode;
             }
@@ -59,10 +57,9 @@ public class Day_29 {
 
         int k = sc.nextInt();
 
-        // Edge cases
-        if (head == null || head.next == null || k == 0) {
+        if(head == null || head.next == null || k == 0){
             Node curr = head;
-            while (curr != null) {
+            while(curr != null){
                 System.out.print(curr.data + " ");
                 curr = curr.next;
             }
@@ -70,12 +67,11 @@ public class Day_29 {
             return;
         }
 
-        // Reduce unnecessary rotations
-        k = k % n;
+        k = k %n;
 
-        if (k == 0) {
+        if( k == 0 ){
             Node curr = head;
-            while (curr != null) {
+            while (curr != null){
                 System.out.print(curr.data + " ");
                 curr = curr.next;
             }
@@ -83,26 +79,20 @@ public class Day_29 {
             return;
         }
 
-        // Make the list circular
-        tail.next = head;
+        tail.next = head; 
 
-        // Find the new tail
-        int steps = n - k - 1;
+        int steps = n - k -1;
         Node newTail = head;
 
-        for (int i = 0; i < steps; i++) {
+        for(int i = 0; i < steps; i++){
             newTail = newTail.next;
         }
 
-        // Update head
         head = newTail.next;
-
-        // Break the circle
         newTail.next = null;
 
-        // Print the rotated list
         Node curr = head;
-        while (curr != null) {
+        while(curr != null){
             System.out.print(curr.data + " ");
             curr = curr.next;
         }
