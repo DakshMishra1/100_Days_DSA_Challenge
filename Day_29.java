@@ -22,6 +22,91 @@
 
 // Solution
 
+import java.util.Scanner;
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int value) {
+        this.data = value;
+        this.next = null;
+    }
+}
+
 public class Day_29 {
-    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        Node head = null;
+        Node tail = null;
+
+        // Create Linked List
+        for (int i = 0; i < n; i++) {
+            int value = sc.nextInt();
+            Node newNode = new Node(value);
+
+            if (head == null) {
+                head = newNode;
+                tail = newNode;
+            } else {
+                tail.next = newNode;
+                tail = newNode;
+            }
+        }
+
+        int k = sc.nextInt();
+
+        // Edge cases
+        if (head == null || head.next == null || k == 0) {
+            Node curr = head;
+            while (curr != null) {
+                System.out.print(curr.data + " ");
+                curr = curr.next;
+            }
+            sc.close();
+            return;
+        }
+
+        // Reduce unnecessary rotations
+        k = k % n;
+
+        if (k == 0) {
+            Node curr = head;
+            while (curr != null) {
+                System.out.print(curr.data + " ");
+                curr = curr.next;
+            }
+            sc.close();
+            return;
+        }
+
+        // Make the list circular
+        tail.next = head;
+
+        // Find the new tail
+        int steps = n - k - 1;
+        Node newTail = head;
+
+        for (int i = 0; i < steps; i++) {
+            newTail = newTail.next;
+        }
+
+        // Update head
+        head = newTail.next;
+
+        // Break the circle
+        newTail.next = null;
+
+        // Print the rotated list
+        Node curr = head;
+        while (curr != null) {
+            System.out.print(curr.data + " ");
+            curr = curr.next;
+        }
+
+        sc.close();
+    }
 }
