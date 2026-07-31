@@ -24,6 +24,40 @@
 
 // Solution
 
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+
+    Node(int value){
+        this.data = value;
+        this.next = null;
+    }
+}
+
 public class Day_30{
-    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        Node head = null;
+        Node tail = null;
+
+        for(int i = 0; i < n; i++){
+            int value = sc.nextInt();
+            int poly = sc.nextInt();
+            Node newNode = new Node(value);
+            Node newpoly = new Node(poly);
+
+            if(head == null){
+                head = newNode;
+                tail = newpoly;
+            }else{
+                tail.next = newpoly;
+                tail = newpoly;
+            }
+        }
+
+        sc.close();
+    }
 }

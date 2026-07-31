@@ -37,18 +37,15 @@ public class Day_25 {
 
     public static int Count(Node head, int m){
         int count = 0;
-        Node temp = head;
 
+        Node temp = head;
         while(temp != null){
             if(temp.data == m){
                 count++;
             }
-
             temp = temp.next;
         }
-
         return count;
-
     }
 
     public static void main(String[] args){
